@@ -29,9 +29,7 @@ class MainActivity : AppCompatActivity() {
             repeat(100) {
                 val countdown = (100 - it)
                 Log.d("Countdown: ", countdown.toString())
-                val msg = Message()
-                msg.what = countdown
-                countdownHandler.sendMessage(msg)
+                countdownHandler.sendEmptyMessage(countdown)
                 Thread.sleep(1000)
             }
         }.start()
